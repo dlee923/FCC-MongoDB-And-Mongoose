@@ -81,7 +81,7 @@ const queryChain = (done) => {
   Person.find({favoriteFoods: foodToSearch})
     .sort({name: 1})
     .limit(2)
-    .select({name: 1, age: 0})
+    .select(['name'])
     .exec(function(err, data) {
       done(err, data)
     });
